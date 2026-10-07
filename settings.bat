@@ -14,6 +14,10 @@ start "" "%WinDir%\Resources\Themes\themeA.theme"
 taskkill /f /im explorer.exe >nul 2>&1
 start explorer.exe
 
+::  === Add CMS & set default ===
+reg add "HKCU\Keyboard Layout\Substitutes" /v 00001009 /t REG_SZ /d 00011009 /f
+reg add "HKCU\Keyboard Layout\Preload" /v 1 /t REG_SZ /d 00001009 /f
+
 echo Taskbar settings applied.
 echo Personalization applied.
 pause
